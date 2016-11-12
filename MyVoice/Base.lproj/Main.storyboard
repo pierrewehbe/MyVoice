@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10089" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10072.1"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="MyVoice" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -15,11 +16,48 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GgI-Xx-osY">
+                                <rect key="frame" x="233" y="268" width="133" height="65"/>
+                                <state key="normal" title="Record"/>
+                                <connections>
+                                    <action selector="RecordAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="khr-dq-3JQ"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ymE-FU-l0E">
+                                <rect key="frame" x="233" y="360" width="133" height="30"/>
+                                <state key="normal" title="Stop"/>
+                                <connections>
+                                    <action selector="StopAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="PJD-EN-2bR"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YKR-8g-Ej5">
+                                <rect key="frame" x="233" y="411" width="133" height="30"/>
+                                <state key="normal" title="Play"/>
+                                <connections>
+                                    <action selector="PlayAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="0mC-XU-MNi"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="GgI-Xx-osY" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="7mI-kU-mbr"/>
+                            <constraint firstItem="ymE-FU-l0E" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="9L0-c2-e4R"/>
+                            <constraint firstItem="YKR-8g-Ej5" firstAttribute="top" secondItem="ymE-FU-l0E" secondAttribute="bottom" constant="21" id="fAD-o0-a6s"/>
+                            <constraint firstItem="YKR-8g-Ej5" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="haW-5E-NkC"/>
+                            <constraint firstItem="ymE-FU-l0E" firstAttribute="top" secondItem="GgI-Xx-osY" secondAttribute="bottom" constant="27" id="tU7-Q1-W1M"/>
+                            <constraint firstItem="GgI-Xx-osY" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="vUq-jA-8d1"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="PlayButton" destination="YKR-8g-Ej5" id="OSS-OG-NJ5"/>
+                        <outlet property="RecordButton" destination="GgI-Xx-osY" id="cYK-fg-jTp"/>
+                        <outlet property="StopButton" destination="ymE-FU-l0E" id="inw-eJ-x2v"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="245" y="319"/>
         </scene>
     </scenes>
 </document>
