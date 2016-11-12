@@ -15,6 +15,8 @@
 		8FEBE4801DD7A790002A2D7A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8FEBE47E1DD7A790002A2D7A /* LaunchScreen.storyboard */; };
 		8FEBE48B1DD7A791002A2D7A /* MyVoiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FEBE48A1DD7A791002A2D7A /* MyVoiceTests.swift */; };
 		8FEBE4961DD7A791002A2D7A /* MyVoiceUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FEBE4951DD7A791002A2D7A /* MyVoiceUITests.swift */; };
+		8FEBE4A61DD7A98D002A2D7A /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FEBE4A51DD7A98D002A2D7A /* Constants.swift */; };
+		8FEBE4A81DD7A997002A2D7A /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FEBE4A71DD7A997002A2D7A /* Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +51,8 @@
 		8FEBE4911DD7A791002A2D7A /* MyVoiceUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MyVoiceUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8FEBE4951DD7A791002A2D7A /* MyVoiceUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyVoiceUITests.swift; sourceTree = "<group>"; };
 		8FEBE4971DD7A791002A2D7A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8FEBE4A51DD7A98D002A2D7A /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		8FEBE4A71DD7A997002A2D7A /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +103,12 @@
 		8FEBE4711DD7A790002A2D7A /* MyVoice */ = {
 			isa = PBXGroup;
 			children = (
+				8FEBE4B01DD7AA15002A2D7A /* Model */,
+				8FEBE4AF1DD7AA0E002A2D7A /* View */,
+				8FEBE4AE1DD7AA03002A2D7A /* Controller */,
+				8FEBE4AA1DD7A9A5002A2D7A /* Ressources */,
+				8FEBE4A91DD7A99E002A2D7A /* Frameworks */,
+				8FEBE4A31DD7A978002A2D7A /* Utilities */,
 				8FEBE4721DD7A790002A2D7A /* AppDelegate.swift */,
 				8FEBE4741DD7A790002A2D7A /* ViewController.swift */,
 				8FEBE4761DD7A790002A2D7A /* Main.storyboard */,
@@ -126,6 +136,74 @@
 				8FEBE4971DD7A791002A2D7A /* Info.plist */,
 			);
 			path = MyVoiceUITests;
+			sourceTree = "<group>";
+		};
+		8FEBE4A31DD7A978002A2D7A /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				8FEBE4A41DD7A97F002A2D7A /* Fonts */,
+				8FEBE4A51DD7A98D002A2D7A /* Constants.swift */,
+				8FEBE4A71DD7A997002A2D7A /* Extensions.swift */,
+			);
+			name = Utilities;
+			sourceTree = "<group>";
+		};
+		8FEBE4A41DD7A97F002A2D7A /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Fonts;
+			sourceTree = "<group>";
+		};
+		8FEBE4A91DD7A99E002A2D7A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		8FEBE4AA1DD7A9A5002A2D7A /* Ressources */ = {
+			isa = PBXGroup;
+			children = (
+				8FEBE4AC1DD7A9C8002A2D7A /* Images */,
+				8FEBE4AB1DD7A9C3002A2D7A /* Videos */,
+			);
+			name = Ressources;
+			sourceTree = "<group>";
+		};
+		8FEBE4AB1DD7A9C3002A2D7A /* Videos */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Videos;
+			sourceTree = "<group>";
+		};
+		8FEBE4AC1DD7A9C8002A2D7A /* Images */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Images;
+			sourceTree = "<group>";
+		};
+		8FEBE4AE1DD7AA03002A2D7A /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		8FEBE4AF1DD7AA0E002A2D7A /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		8FEBE4B01DD7AA15002A2D7A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -262,9 +340,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8FEBE4A81DD7A997002A2D7A /* Extensions.swift in Sources */,
 				8FEBE47B1DD7A790002A2D7A /* MyVoice.xcdatamodeld in Sources */,
 				8FEBE4751DD7A790002A2D7A /* ViewController.swift in Sources */,
 				8FEBE4731DD7A790002A2D7A /* AppDelegate.swift in Sources */,
+				8FEBE4A61DD7A98D002A2D7A /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
