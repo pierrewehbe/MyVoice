@@ -35,9 +35,6 @@ let Message_Delete_Success: String = "Deletion has been sucessful"
 
 //MARK: Variables
 
-//Audio
-var audioPlayer : AVAudioPlayer?
-var audioRecorder : AVAudioRecorder?
 
 
 

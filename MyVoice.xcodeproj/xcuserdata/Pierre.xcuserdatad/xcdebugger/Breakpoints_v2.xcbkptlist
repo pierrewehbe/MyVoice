@@ -26,11 +26,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MyVoice/VC_Recorder.swift"
-            timestampString = "500920037.387934"
+            timestampString = "500934799.551701"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "127"
-            endingLineNumber = "127"
+            startingLineNumber = "423"
+            endingLineNumber = "423"
             landmarkName = "isAppAlreadyLaunchedOnce(Done:Record:Flag:)"
             landmarkType = "9">
          </BreakpointContent>
@@ -42,11 +42,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MyVoice/VC_Recorder.swift"
-            timestampString = "500920264.958252"
+            timestampString = "500934799.551701"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "334"
-            endingLineNumber = "334"
+            startingLineNumber = "635"
+            endingLineNumber = "635"
             landmarkName = "deleteAllData(entity:)"
             landmarkType = "9">
          </BreakpointContent>
@@ -58,13 +58,45 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MyVoice/VC_Recorder.swift"
-            timestampString = "500920264.958252"
+            timestampString = "500934799.551701"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "299"
-            endingLineNumber = "299"
+            startingLineNumber = "600"
+            endingLineNumber = "600"
             landmarkName = "updateBtnStateInCoreData(Done:Record:Flag:)"
             landmarkType = "9">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MyVoice/VC_Recorder.swift"
+            timestampString = "500934799.551701"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "633"
+            endingLineNumber = "633"
+            landmarkName = "deleteAllData(entity:)"
+            landmarkType = "9">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MyVoice/VC_Recorder.swift"
+            timestampString = "500934799.551701"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "257"
+            endingLineNumber = "257"
+            landmarkName = "updateAudioMeter(_:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

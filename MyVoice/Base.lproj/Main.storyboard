@@ -55,7 +55,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hbr-CX-Kpd">
-                                <rect key="frame" x="171" y="118" width="34" height="30"/>
+                                <rect key="frame" x="171" y="117.5" width="34" height="30"/>
                                 <state key="normal" title="Load"/>
                                 <connections>
                                     <action selector="LoadAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="2ZJ-xr-poC"/>
@@ -165,6 +165,29 @@
                                     <action selector="Action_Done:" destination="mfL-b4-7yL" eventType="touchUpInside" id="l0i-dK-bO8"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p2K-mQ-c9v">
+                                <rect key="frame" x="96" y="374" width="169" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WRV-ac-dpk">
+                                <rect key="frame" x="209" y="336" width="42" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Pause"/>
+                                <connections>
+                                    <action selector="Action_PausePlayer:" destination="mfL-b4-7yL" eventType="touchUpInside" id="0vN-QG-51O"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PEn-C9-Bdw">
+                                <rect key="frame" x="115" y="336" width="68" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Play"/>
+                                <connections>
+                                    <action selector="Action_Play:" destination="mfL-b4-7yL" eventType="touchUpInside" id="ODu-95-7Jo"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -176,7 +199,10 @@
                     <connections>
                         <outlet property="Button_Done" destination="xs9-9k-wLk" id="9EF-Ov-qzI"/>
                         <outlet property="Button_Flag" destination="pTb-1L-rh4" id="3qL-KG-SVX"/>
+                        <outlet property="Button_PausePlayer" destination="WRV-ac-dpk" id="xZl-CG-gIj"/>
+                        <outlet property="Button_Play" destination="PEn-C9-Bdw" id="1ti-fd-3rE"/>
                         <outlet property="Button_Record" destination="Xkn-wW-a2M" id="uhX-ZM-CFX"/>
+                        <outlet property="Label_Time" destination="p2K-mQ-c9v" id="TdU-WJ-Xqs"/>
                         <outlet property="view" destination="myS-zd-dh2" id="n9S-Jl-i0y"/>
                     </connections>
                 </viewController>
