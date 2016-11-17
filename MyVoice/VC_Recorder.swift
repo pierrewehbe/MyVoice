@@ -28,7 +28,7 @@ class VC_Recorder: UIViewController , AVAudioPlayerDelegate , AVAudioRecorderDel
     //Audio
     var audioPlayer : AVAudioPlayer?
     var audioRecorder : AVAudioRecorder?
-
+    
     // MARK: Buttons Labels
     
     @IBOutlet weak var Button_Done: UIButton!
@@ -36,6 +36,19 @@ class VC_Recorder: UIViewController , AVAudioPlayerDelegate , AVAudioRecorderDel
     @IBOutlet weak var Button_Flag: UIButton!
     @IBOutlet weak var Button_Play: UIButton!
     @IBOutlet weak var Button_PausePlayer: UIButton!
+    
+    
+    func updateRecordButtonAtExit(){
+        RecordButtonState = .Continue
+        self.audioRecorder?.pause()
+        let StateOfRecordBtn = NSEntityDescription.insertNewObject(forEntityName: "StateOfRecordBtn", into: context)
+        StateOfRecordBtn.setValue( "Continue" , forKey: "state")
+        print("Last state Saved was \(RecordButtonState)")
+        
+        //FIXME: Recording was not working since The audioRecoder is still nil
+        //FIXME: I will be saving my temp record in a specific file, if when I enter the fle alreay exists, then I need to continue recording from it
+        //Else it means I am done recording and have copied it in the All fles location at least
+    }
     
     
     // MARK: Text Labels
@@ -47,47 +60,89 @@ class VC_Recorder: UIViewController , AVAudioPlayerDelegate , AVAudioRecorderDel
         isAppAlreadyLaunchedOnce(Done: Button_Done,Record: Button_Record,Flag: Button_Flag)
         Button_Play.isEnabled = false
         Button_PausePlayer.isEnabled = false
+        
+        if audioRecorder != nil{
+            meterTimer = Timer.scheduledTimer(timeInterval: 0.1,
+                                              target:self,
+                                              selector:#selector(VC_Recorder.updateAudioMeter(_:)),
+                                              userInfo:nil,
+                                              repeats:true)
+            
+            let min = Int((audioRecorder?.currentTime)! / 60)
+            let sec = Int((audioRecorder?.currentTime.truncatingRemainder(dividingBy: 60))!)
+            let s = String(format: "%02d:%02d", min, sec)
+            Label_Time.text = s
+        }else{
+            Label_Time.text = defaultTime
+        }
+        
+        //Create a Userfefault to keep track from last time I was recording
+        if ( defaults.bool(forKey: "wasRecording")){
+            Button_Record.setTitle("Continue", for: UIControlState())
+        }
+        
+        
+        print ( "State is \(RecordButtonState)")
+        colorStatusBar()
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
-        audioPlayer = nil
-        audioRecorder = nil
+        //        audioPlayer = nil
+        //        audioRecorder = nil
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated) // make sure super class are being called
+        self.navigationController?.isNavigationBarHidden =  true
+        
+       
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        updateBtnStateInCoreData(Done: Button_Done, Record: Button_Record, Flag: Button_Flag)
+        
         
     }
     
+    
+    
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == RtoF ||  segue.identifier == RtoS {
-            //            if let destinationVC = segue.destinationViewController as? OtherViewController {
-            //                destinationVC.numberToDisplay = counter
-            //            }
+        if segue.identifier == RtoF  {
+            if let destinationVC = segue.destination as? VC_Files {
+                destinationVC.audioPlayer = self.audioPlayer
+                destinationVC.audioRecorder = self.audioRecorder
+            }
             // example to pass values between segues
-            print(segue.identifier)
+            
+        }else if segue.identifier == RtoS {
+            if let destinationVC = segue.destination as? VC_Settings {
+                destinationVC.audioPlayer = self.audioPlayer
+                destinationVC.audioRecorder = self.audioRecorder
+            }
+            // example to pass values between segues
+            
         }
-        updateBtnStateInCoreData(Done: Button_Done, Record: Button_Record, Flag: Button_Flag)
+        print(segue.identifier!)
     }
     
     
     // MARK: Buttons Actions
     
     @IBAction func Action_PausePlayer(_ sender: UIButton) {
-            audioPlayer?.stop()
+        audioPlayer?.stop()
     }
     
-
+    
     @IBAction func Action_Done(_ sender: UIButton) {
-
-            print("I was recording I want to pause to see if I will save, cancel or delete")
-            audioRecorder?.pause()
-            RecordButtonState = .Continue
-            Button_Record.setTitle("Continue", for: .normal)
-            
-            Save()
-        
+        audioRecorder?.pause()
+        RecordButtonState = .Continue
+        Button_Record.setTitle("Continue", for: UIControlState())
+        colorStatusBar()
+        Save()
+       
     }
     
     /*
@@ -106,25 +161,29 @@ class VC_Recorder: UIViewController , AVAudioPlayerDelegate , AVAudioRecorderDel
         
         // If nothing has been recorded yet
         if audioRecorder == nil {
-            print("Nothing has been recorded yet : Afficher Record to Pause")
             Button_Play.isEnabled = false
             Button_Done.isEnabled = true
-            recordWithPermission(true)
+            print ("audio recorder is nil")
             SwitchBtnState(Record : Button_Record)
+            recordWithPermission(true)
+            
+            
             return
         }
         
         // I am recording + already have some data
         if audioRecorder != nil && (audioRecorder?.isRecording)! { // Want to pause
-            print("I am recording + already have some data -> so I paused , title is now to continue : Afficher Pause to Continue")
             SwitchBtnState(Record : Button_Record)
             audioRecorder?.pause()
-        } else {
-            print("Afficher Continue to Pause")
+            colorStatusBar()
+        } else { // not nil and not recording ( paused )
             SwitchBtnState(Record : Button_Record)
             Button_Play.isEnabled = false
             Button_Done.isEnabled = true
             //audioRecorder?.record()
+            
+            print("Paused, want to continue the timer")
+            print("Current State is \(RecordButtonState)")
             recordWithPermission(false)
         }
         
@@ -152,8 +211,6 @@ class VC_Recorder: UIViewController , AVAudioPlayerDelegate , AVAudioRecorderDel
         } else {
             url = soundFileURL!
         }
-        print("playing \(url)")
-        
         do {
             audioPlayer = try AVAudioPlayer(contentsOf: url!)
             Button_Done.isEnabled = true
@@ -171,17 +228,14 @@ class VC_Recorder: UIViewController , AVAudioPlayerDelegate , AVAudioRecorderDel
     }
     
     
-    
     func Save(){
         // iOS8 and later
-        
-       
         
         let alert = UIAlertController(title: "Recorder",
                                       message: "Finished Recording",
                                       preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "Keep", style: .default, handler: {action in
-           self.Keep()
+            self.Keep()
             
         }))
         alert.addAction(UIAlertAction(title: "Delete", style: .destructive, handler: {action in
@@ -192,32 +246,36 @@ class VC_Recorder: UIViewController , AVAudioPlayerDelegate , AVAudioRecorderDel
             
         }))
         self.present(alert, animated:true, completion:nil)
-      
+        
     }
     
     func Keep(){
         print("Keep was tapped")
-
-            self.audioRecorder?.stop()
+        
+        self.audioRecorder?.stop()
         
         
-        meterTimer.invalidate()
-        print("Done recording")
+        if meterTimer != nil{
+            meterTimer.invalidate()
+            print( "Timer was invalidated" )
+        }
+        
         let session = AVAudioSession.sharedInstance()
         do {
             try session.setActive(false)
             RecordButtonState = .Record
             audioRecorder?.stop()
-            Button_Record.setTitle("Record", for: .normal)
+            colorStatusBar()
+            Button_Record.setTitle("Record", for: UIControlState())
             Button_Play.isEnabled = true
-             Button_PausePlayer.isEnabled = true
+            Button_PausePlayer.isEnabled = true
             Button_Done.isEnabled = false
         } catch let error as NSError {
             print("could not make session inactive")
             print(error.localizedDescription)
         }
- 
-        //self.audioRecorder = nil  Akhou el charmouta ca ma niquer
+        
+        self.audioRecorder = nil  // Akhou el charmouta ca ma niquer
         
     }
     
@@ -226,14 +284,17 @@ class VC_Recorder: UIViewController , AVAudioPlayerDelegate , AVAudioRecorderDel
         self.audioRecorder?.stop()
         
         
-        meterTimer.invalidate()
-        print("Done recording")
+        if meterTimer != nil{
+            meterTimer.invalidate()
+            print( "Timer was invalidated" )
+        }
         let session = AVAudioSession.sharedInstance()
         do {
             try session.setActive(false)
             RecordButtonState = .Record
+            colorStatusBar()
             audioRecorder?.stop()
-            Button_Record.setTitle("Record", for: .normal)
+            Button_Record.setTitle("Record", for: UIControlState())
             Button_Play.isEnabled = false
             Button_PausePlayer.isEnabled = false
             Button_Done.isEnabled = false
@@ -243,8 +304,8 @@ class VC_Recorder: UIViewController , AVAudioPlayerDelegate , AVAudioRecorderDel
         }
         
         self.audioRecorder?.deleteRecording()
+        Label_Time.text = defaultTime
     }
-    
     
     func Cancel(){
         print("Cancel was tapped")
@@ -260,6 +321,7 @@ class VC_Recorder: UIViewController , AVAudioPlayerDelegate , AVAudioRecorderDel
                 let sec = Int((audioRecorder?.currentTime.truncatingRemainder(dividingBy: 60))!)
                 let s = String(format: "%02d:%02d", min, sec)
                 Label_Time.text = s
+                print(s)
                 audioRecorder?.updateMeters()
                 // if you want to draw some graphics...
                 //var apc0 = recorder.averagePowerForChannel(0)
@@ -273,7 +335,8 @@ class VC_Recorder: UIViewController , AVAudioPlayerDelegate , AVAudioRecorderDel
         let format = DateFormatter()
         format.dateFormat="yyyy-MM-dd-HH-mm-ss"
         let currentFileName = "recording-\(format.string(from: Date())).m4a"
-        print(currentFileName)
+        //FIXME: need to create a golbal variable for the name
+        //print(currentFileName)
         
         let documentsDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
         soundFileURL = documentsDirectory.appendingPathComponent(currentFileName)
@@ -304,6 +367,8 @@ class VC_Recorder: UIViewController , AVAudioPlayerDelegate , AVAudioRecorderDel
         }
     }
     
+    // FIXME: Always delete all the timer and only keep track the the first one!
+    
     
     func recordWithPermission(_ setup:Bool) {
         let session:AVAudioSession = AVAudioSession.sharedInstance()
@@ -316,14 +381,17 @@ class VC_Recorder: UIViewController , AVAudioPlayerDelegate , AVAudioRecorderDel
                     if setup {
                         self.setupRecorder()
                         print("Preparing the recording of a new file")
+                        print("Current State is \(RecordButtonState)")
+                        
                     }
-                    print("Start / Continue to record")
-                    self.audioRecorder?.record() // Continue
                     meterTimer = Timer.scheduledTimer(timeInterval: 0.1,
                                                       target:self,
                                                       selector:#selector(VC_Recorder.updateAudioMeter(_:)),
                                                       userInfo:nil,
                                                       repeats:true)
+                    print("Current State is \(RecordButtonState)")
+                    self.audioRecorder?.record() // Continue
+                    self.colorStatusBar()
                 } else {
                     print("Permission to record not granted")
                 }
@@ -372,8 +440,8 @@ class VC_Recorder: UIViewController , AVAudioPlayerDelegate , AVAudioRecorderDel
     
     func audioRecorderDidFinishRecording(_ recorder: AVAudioRecorder,
                                          successfully flag: Bool) {
-        print("Done Recording Pour de bon // Stop invoked")
-        
+        print("Done Recording")
+        print(" ")
     }
     
     func audioRecorderEncodeErrorDidOccur(_ recorder: AVAudioRecorder,
@@ -389,18 +457,45 @@ class VC_Recorder: UIViewController , AVAudioPlayerDelegate , AVAudioRecorderDel
     // MARK: AVAudioPlayerDelegate
     
     func audioPlayerDidFinishPlaying(_ player: AVAudioPlayer, successfully flag: Bool) {
-        print("finished playing \(flag)")
+        print("Finished playing \(flag)")
     }
     
     func audioPlayerDecodeErrorDidOccur(_ player: AVAudioPlayer, error: Error?) {
         if let e = error {
             print("\(e.localizedDescription)")
+            //FIXME: add the buttons modificatons here for done.isenable...
         }
         
     }
     
     
-    
+    func colorStatusBar(){
+        UIApplication.shared.isStatusBarHidden = false
+        UIApplication.shared.statusBarStyle = .lightContent
+        
+        //Change status bar color
+        let statusBar: UIView = UIApplication.shared.value(forKey: "statusBar") as! UIView
+        if self.audioRecorder != nil {
+           //Status bar style and visibility
+           
+            //if statusBar.respondsToSelector("setBackgroundColor:") {
+                switch RecordButtonState {
+                case .Record:
+                    statusBar.backgroundColor = UIColor.black
+                case .Continue:
+                    statusBar.backgroundColor = UIColor.blue
+                case .Pause:
+                    statusBar.backgroundColor = UIColor.red
+               
+                }
+                //FIXME: If I exited my app while it was at the continue state, it will bw black since the audio is nil, will need to arrange it in case I didn't took care of this case, can simply remove the condition that checks if it is nil
+                
+            //}
+            
+        }else{
+            statusBar.backgroundColor = UIColor.black
+        }
+    }
     
     
     
@@ -474,7 +569,7 @@ func InitializeStateOfBtn( Done: UIButton , Record:UIButton , Flag:UIButton){
         }
     }catch let error as NSError{
         //print (error.localizedDescription)
-        print("Error in request")
+        print(error.localizedDescription)
     }
     
     /*****************************************/
@@ -492,13 +587,13 @@ func InitializeStateOfBtn( Done: UIButton , Record:UIButton , Flag:UIButton){
                     switch temp {
                     case "Record":
                         RecordButtonState = .Record
-                        Record.setTitle("Record", for: .normal)
+                        Record.setTitle("Record", for: UIControlState())
                     case "Pause":
                         RecordButtonState = .Pause
-                        Record.setTitle("Pause", for: .normal)
+                        Record.setTitle("Pause", for: UIControlState())
                     case "Continue":
                         RecordButtonState = .Continue
-                        Record.setTitle("Continue", for: .normal)
+                        Record.setTitle("Continue", for: UIControlState())
                     default:
                         print ("Type not defined for state of Record button")
                     }
@@ -507,8 +602,14 @@ func InitializeStateOfBtn( Done: UIButton , Record:UIButton , Flag:UIButton){
         }
     }catch let error as NSError{
         //print (error.localizedDescription)
-        print("Error in request 2")
+        print(error)
     }
+    
+    
+    /*****************************************/
+    
+    
+    
 }
 
 func InitializeStateOfBtnFirstRun( Done: UIButton , Record:UIButton , Flag:UIButton){
@@ -535,6 +636,10 @@ func InitializeStateOfBtnFirstRun( Done: UIButton , Record:UIButton , Flag:UIBut
     }catch let error as NSError{
         print (error)
     }
+    
+    defaults.set(false, forKey: "wasRecording")
+    
+    
 }
 
 
@@ -556,16 +661,19 @@ func SwitchBtnState(Record : UIButton){
     switch RecordButtonState {
     case .Record:
         RecordButtonState = .Pause
-        Record.setTitle("Pause", for: .normal)
+        Record.setTitle("Pause", for: UIControlState())
         print("From Record to Pause")
+        print(" \n")
     case .Pause:
         RecordButtonState = .Continue
-        Record.setTitle("Continue", for: .normal)
+        Record.setTitle("Continue", for: UIControlState())
         print("From Pause to Continue")
+        print(" \n")
     case .Continue:
         RecordButtonState = .Pause
-        Record.setTitle("Pause", for: .normal)
+        Record.setTitle("Pause", for: UIControlState())
         print("From Continue to Pause")
+        print(" \n")
     }
 }
 
@@ -620,10 +728,13 @@ func updateBtnStateInCoreData( Done: UIButton , Record:UIButton , Flag:UIButton)
     switch RecordButtonState {
     case .Record:
         tempString = "Record"
+        print("Last State saved was : Record" )
     case .Pause:
         tempString = "Pause"
+        print("Last State saved was : Pause" )
     case .Continue:
         tempString = "Continue"
+        print("Last State saved was : Continue" )
     }
     StateOfRecordBtn.setValue( tempString , forKey: "state")
     

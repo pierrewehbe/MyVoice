@@ -14,9 +14,7 @@
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "153"
-            endingLineNumber = "153"
-            landmarkName = "StopAction(_:)"
-            landmarkType = "7">
+            endingLineNumber = "153">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -26,11 +24,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MyVoice/VC_Recorder.swift"
-            timestampString = "500934799.551701"
+            timestampString = "501068110.341214"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "423"
-            endingLineNumber = "423"
+            startingLineNumber = "518"
+            endingLineNumber = "518"
             landmarkName = "isAppAlreadyLaunchedOnce(Done:Record:Flag:)"
             landmarkType = "9">
          </BreakpointContent>
@@ -42,11 +40,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MyVoice/VC_Recorder.swift"
-            timestampString = "500934799.551701"
+            timestampString = "501068110.341214"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "635"
-            endingLineNumber = "635"
+            startingLineNumber = "746"
+            endingLineNumber = "746"
             landmarkName = "deleteAllData(entity:)"
             landmarkType = "9">
          </BreakpointContent>
@@ -58,11 +56,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MyVoice/VC_Recorder.swift"
-            timestampString = "500934799.551701"
+            timestampString = "501068110.341214"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "600"
-            endingLineNumber = "600"
+            startingLineNumber = "708"
+            endingLineNumber = "708"
             landmarkName = "updateBtnStateInCoreData(Done:Record:Flag:)"
             landmarkType = "9">
          </BreakpointContent>
@@ -74,11 +72,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MyVoice/VC_Recorder.swift"
-            timestampString = "500934799.551701"
+            timestampString = "501068110.341214"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "633"
-            endingLineNumber = "633"
+            startingLineNumber = "744"
+            endingLineNumber = "744"
             landmarkName = "deleteAllData(entity:)"
             landmarkType = "9">
          </BreakpointContent>
@@ -90,13 +88,92 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MyVoice/VC_Recorder.swift"
-            timestampString = "500934799.551701"
+            timestampString = "501068110.341214"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "257"
-            endingLineNumber = "257"
+            startingLineNumber = "318"
+            endingLineNumber = "318"
             landmarkName = "updateAudioMeter(_:)"
             landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MyVoice/VC_Recorder.swift"
+            timestampString = "501068110.341214"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "97"
+            endingLineNumber = "97"
+            landmarkName = "viewDidAppear(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MyVoice/VC_Recorder.swift"
+            timestampString = "501058598.79687"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "54"
+            endingLineNumber = "54"
+            landmarkName = "VC_Recorder"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MyVoice.VC_Recorder.Label_Time.setter : weak Swift.ImplicitlyUnwrappedOptional&lt;__ObjC.UILabel&gt;"
+                  moduleName = "MyVoice"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Pierre/GitHub/MyVoice/MyVoice/VC_Recorder.swift"
+                  timestampString = "501006004.639964"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "47"
+                  endingLineNumber = "47"
+                  offsetFromSymbolStart = "42">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MyVoice.VC_Recorder.init (nibName : Swift.Optional&lt;Swift.String&gt;, bundle : Swift.Optional&lt;__ObjC.Bundle&gt;) -&gt; MyVoice.VC_Recorder"
+                  moduleName = "MyVoice"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Pierre/GitHub/MyVoice/MyVoice/VC_Recorder.swift"
+                  timestampString = "501006004.642958"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "47"
+                  endingLineNumber = "47"
+                  offsetFromSymbolStart = "456">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MyVoice.VC_Recorder.init (coder : __ObjC.NSCoder) -&gt; Swift.Optional&lt;MyVoice.VC_Recorder&gt;"
+                  moduleName = "MyVoice"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Pierre/GitHub/MyVoice/MyVoice/VC_Recorder.swift"
+                  timestampString = "501006004.64586"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "47"
+                  endingLineNumber = "47"
+                  offsetFromSymbolStart = "352">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

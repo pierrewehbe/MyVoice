@@ -210,10 +210,10 @@
             </objects>
             <point key="canvasLocation" x="1496.8" y="318.89055472263868"/>
         </scene>
-        <!--View Controller-->
+        <!--Files-->
         <scene sceneID="Fnd-SC-jKI">
             <objects>
-                <viewController id="gpr-ZK-UmH" sceneMemberID="viewController">
+                <viewController id="gpr-ZK-UmH" customClass="VC_Files" customModule="MyVoice" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="KGQ-Or-vh0"/>
                         <viewControllerLayoutGuide type="bottom" id="lbJ-co-ri4"/>
@@ -248,15 +248,18 @@
                             <constraint firstItem="lbJ-co-ri4" firstAttribute="top" secondItem="cUP-CA-zuN" secondAttribute="bottom" id="rZC-iO-sRy"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="view" destination="DZA-kN-fuQ" id="2eh-0W-XvJ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1JX-e9-jNi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2486" y="-17"/>
         </scene>
-        <!--View Controller-->
+        <!--Settings-->
         <scene sceneID="H4T-Ps-T2K">
             <objects>
-                <viewController id="NwQ-lb-udK" sceneMemberID="viewController">
+                <viewController id="NwQ-lb-udK" customClass="VC_Settings" customModule="MyVoice" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="tWs-OR-PJl"/>
                         <viewControllerLayoutGuide type="bottom" id="LAR-v6-kvB"/>
@@ -298,8 +301,8 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="30L-1V-El0"/>
-        <segue reference="8MS-4b-lec"/>
-        <segue reference="PjZ-1I-zrJ"/>
+        <segue reference="Hhn-8W-TeN"/>
+        <segue reference="Nak-1N-2IG"/>
+        <segue reference="xwn-z4-rgR"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -10,6 +10,8 @@
 		8F1FFB191DD8672400DAE7F2 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F1FFB181DD8672400DAE7F2 /* AVFoundation.framework */; };
 		8F50C98F1DDB3C4A00FB7B5F /* VC_Recorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F50C98E1DDB3C4A00FB7B5F /* VC_Recorder.swift */; };
 		8F50C9921DDB40AC00FB7B5F /* RecordBtnState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F50C9911DDB40AC00FB7B5F /* RecordBtnState.swift */; };
+		8FAB811A1DDCAAE100A1CA54 /* VC_Files.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FAB81191DDCAAE100A1CA54 /* VC_Files.swift */; };
+		8FAB811C1DDCB0D700A1CA54 /* VC_Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FAB811B1DDCB0D700A1CA54 /* VC_Settings.swift */; };
 		8FEBE4731DD7A790002A2D7A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FEBE4721DD7A790002A2D7A /* AppDelegate.swift */; };
 		8FEBE4751DD7A790002A2D7A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FEBE4741DD7A790002A2D7A /* ViewController.swift */; };
 		8FEBE4781DD7A790002A2D7A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8FEBE4761DD7A790002A2D7A /* Main.storyboard */; };
@@ -43,6 +45,8 @@
 		8F1FFB181DD8672400DAE7F2 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		8F50C98E1DDB3C4A00FB7B5F /* VC_Recorder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VC_Recorder.swift; sourceTree = "<group>"; };
 		8F50C9911DDB40AC00FB7B5F /* RecordBtnState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordBtnState.swift; sourceTree = "<group>"; };
+		8FAB81191DDCAAE100A1CA54 /* VC_Files.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VC_Files.swift; sourceTree = "<group>"; };
+		8FAB811B1DDCB0D700A1CA54 /* VC_Settings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VC_Settings.swift; sourceTree = "<group>"; };
 		8FEBE46F1DD7A790002A2D7A /* MyVoice.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyVoice.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8FEBE4721DD7A790002A2D7A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8FEBE4741DD7A790002A2D7A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -214,6 +218,8 @@
 			isa = PBXGroup;
 			children = (
 				8F50C98E1DDB3C4A00FB7B5F /* VC_Recorder.swift */,
+				8FAB81191DDCAAE100A1CA54 /* VC_Files.swift */,
+				8FAB811B1DDCB0D700A1CA54 /* VC_Settings.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -374,8 +380,10 @@
 				8FEBE47B1DD7A790002A2D7A /* MyVoice.xcdatamodeld in Sources */,
 				8F50C98F1DDB3C4A00FB7B5F /* VC_Recorder.swift in Sources */,
 				8FEBE4751DD7A790002A2D7A /* ViewController.swift in Sources */,
+				8FAB811A1DDCAAE100A1CA54 /* VC_Files.swift in Sources */,
 				8FEBE4731DD7A790002A2D7A /* AppDelegate.swift in Sources */,
 				8FEBE4A61DD7A98D002A2D7A /* Constants.swift in Sources */,
+				8FAB811C1DDCB0D700A1CA54 /* VC_Settings.swift in Sources */,
 				8F50C9921DDB40AC00FB7B5F /* RecordBtnState.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

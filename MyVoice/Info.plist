@@ -45,15 +45,21 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
-    <key>NSMicrophoneUsageDescription</key>
-        <string>Need microphone access for uploading videos</string>
-    <key>NSCameraUsageDescription</key>
-        <string>Need camera access for uploading Images</string>
-    <key>NSLocationUsageDescription</key>
-        <string>Need location access for updating nearby friends</string>
-    <key>NSLocationWhenInUseUsageDescription</key>
-        <string>This app will use your location to show you cool stuff near you.</string>
-    <key>NSPhotoLibraryUsageDescription</key>
-        <string>NeedLibrary access for uploading Images</string>
+	<key>NSMicrophoneUsageDescription</key>
+	<string>Need microphone access for uploading videos</string>
+	<key>NSCameraUsageDescription</key>
+	<string>Need camera access for uploading Images</string>
+	<key>NSLocationUsageDescription</key>
+	<string>Need location access for updating nearby friends</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>This app will use your location to show you cool stuff near you.</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>NeedLibrary access for uploading Images</string>
+	<key>UIViewControllerBasedStatusBarAppearance</key>
+	<false/>
+	<key>UIBackgroundModes</key>
+	<array>
+		<string>audio</string>
+	</array>
 </dict>
 </plist>

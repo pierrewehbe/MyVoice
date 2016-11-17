@@ -15,6 +15,8 @@ import UIKit
 
 //MARK: File Manager
 let fileMgr = FileManager.default
+let defaults = UserDefaults.standard
+
 
 //MARK: CoreData
 
@@ -34,9 +36,7 @@ let Message_Delete_Success: String = "Deletion has been sucessful"
 
 
 //MARK: Variables
-
-
-
+let defaultTime = "00:00"
 
 
 //MARK: Segues

@@ -11,3 +11,11 @@ import UIKit
 
 
 
+extension UIViewController {
+    // utility to set the status bar appearance
+    // Note: Make sure "View controller-based status bar appearance" is set to NO in your target settings or this won't work
+    func setStatusBarForDarkBackground(dark: Bool) {
+        UIApplication.shared.statusBarStyle = dark ? .lightContent : .default
+        setNeedsStatusBarAppearanceUpdate()
+    }
+}
