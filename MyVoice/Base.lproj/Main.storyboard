@@ -6,115 +6,14 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
-        <scene sceneID="tne-QT-ifu">
-            <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="MyVoice" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
-                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GgI-Xx-osY">
-                                <rect key="frame" x="121" y="301" width="133" height="65"/>
-                                <state key="normal" title="Record"/>
-                                <connections>
-                                    <action selector="RecordAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="khr-dq-3JQ"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ymE-FU-l0E">
-                                <rect key="frame" x="121" y="370" width="133" height="30"/>
-                                <state key="normal" title="Stop"/>
-                                <connections>
-                                    <action selector="StopAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="PJD-EN-2bR"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YKR-8g-Ej5">
-                                <rect key="frame" x="121" y="408" width="133" height="30"/>
-                                <state key="normal" title="Play"/>
-                                <connections>
-                                    <action selector="PlayAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="0mC-XU-MNi"/>
-                                </connections>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Timer" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pY3-6E-CVx">
-                                <rect key="frame" x="121" y="256" width="133" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name of File" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Xfi-qG-IzC">
-                                <rect key="frame" x="75" y="162" width="224" height="30"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hbr-CX-Kpd">
-                                <rect key="frame" x="171" y="117.5" width="34" height="30"/>
-                                <state key="normal" title="Load"/>
-                                <connections>
-                                    <action selector="LoadAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="2ZJ-xr-poC"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EJn-xL-gd6">
-                                <rect key="frame" x="171" y="80" width="34" height="30"/>
-                                <state key="normal" title="Save"/>
-                                <connections>
-                                    <action selector="SaveAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="quH-ic-CaK"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3rv-bu-qwc">
-                                <rect key="frame" x="160" y="209" width="45" height="30"/>
-                                <state key="normal" title="Delete"/>
-                                <connections>
-                                    <action selector="DeleteAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="dXp-9p-swN"/>
-                                </connections>
-                            </button>
-                        </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <constraints>
-                            <constraint firstItem="3rv-bu-qwc" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="5Q2-3e-UiK"/>
-                            <constraint firstItem="GgI-Xx-osY" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="7mI-kU-mbr"/>
-                            <constraint firstItem="Xfi-qG-IzC" firstAttribute="top" secondItem="hbr-CX-Kpd" secondAttribute="bottom" constant="32" id="7wK-es-c5T"/>
-                            <constraint firstItem="pY3-6E-CVx" firstAttribute="top" secondItem="Xfi-qG-IzC" secondAttribute="bottom" constant="64" id="8Ye-mQ-0zO"/>
-                            <constraint firstItem="ymE-FU-l0E" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="9L0-c2-e4R"/>
-                            <constraint firstItem="GgI-Xx-osY" firstAttribute="top" secondItem="pY3-6E-CVx" secondAttribute="bottom" constant="24" id="KQf-hm-feg"/>
-                            <constraint firstItem="Xfi-qG-IzC" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="YJG-7R-U9f"/>
-                            <constraint firstItem="pY3-6E-CVx" firstAttribute="top" secondItem="3rv-bu-qwc" secondAttribute="bottom" constant="17" id="Ys2-Eh-kcw"/>
-                            <constraint firstItem="YKR-8g-Ej5" firstAttribute="top" secondItem="ymE-FU-l0E" secondAttribute="bottom" constant="21" id="fAD-o0-a6s"/>
-                            <constraint firstItem="YKR-8g-Ej5" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="haW-5E-NkC"/>
-                            <constraint firstItem="hbr-CX-Kpd" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="iKr-Wp-UPD"/>
-                            <constraint firstItem="EJn-xL-gd6" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="mni-m1-tKD"/>
-                            <constraint firstItem="pY3-6E-CVx" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="sJj-LX-Q1b"/>
-                            <constraint firstItem="ymE-FU-l0E" firstAttribute="top" secondItem="GgI-Xx-osY" secondAttribute="bottom" constant="27" id="tU7-Q1-W1M"/>
-                            <constraint firstItem="GgI-Xx-osY" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="vUq-jA-8d1"/>
-                            <constraint firstItem="Xfi-qG-IzC" firstAttribute="top" secondItem="EJn-xL-gd6" secondAttribute="bottom" constant="80" id="x5K-rR-TZY"/>
-                        </constraints>
-                    </view>
-                    <connections>
-                        <outlet property="DeleteButton" destination="3rv-bu-qwc" id="hvc-VS-xqm"/>
-                        <outlet property="LoadButton" destination="hbr-CX-Kpd" id="l0N-tM-YA7"/>
-                        <outlet property="NameOfFile" destination="Xfi-qG-IzC" id="FiT-3B-gdV"/>
-                        <outlet property="PlayButton" destination="EJn-xL-gd6" id="kXe-IM-72D"/>
-                        <outlet property="RecordButton" destination="GgI-Xx-osY" id="cYK-fg-jTp"/>
-                        <outlet property="SaveButton" destination="EJn-xL-gd6" id="hFa-qi-EW9"/>
-                        <outlet property="StopButton" destination="ymE-FU-l0E" id="inw-eJ-x2v"/>
-                        <outlet property="TimeRecording" destination="pY3-6E-CVx" id="nxr-2R-2A7"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="244" y="318.89055472263868"/>
-        </scene>
         <!--Recorder-->
         <scene sceneID="HAO-8o-XHO">
             <objects>
-                <viewController storyboardIdentifier="1" useStoryboardIdentifierAsRestorationIdentifier="YES" id="mfL-b4-7yL" customClass="VC_Recorder" customModule="MyVoice" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="1" autoresizesArchivedViewToFullSize="NO" wantsFullScreenLayout="YES" useStoryboardIdentifierAsRestorationIdentifier="YES" id="mfL-b4-7yL" customClass="VC_Recorder" customModule="MyVoice" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="41I-g8-vsr"/>
                         <viewControllerLayoutGuide type="bottom" id="ueQ-QE-glY"/>
@@ -123,92 +22,148 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4Nq-J7-jOl">
-                                <rect key="frame" x="0.0" y="623" width="375" height="44"/>
-                                <items>
-                                    <barButtonItem title="Files" id="6Pi-R6-3wy">
-                                        <connections>
-                                            <segue destination="gpr-ZK-UmH" kind="show" identifier="SEGUE_FILES_FROM_RECORDS" id="8MS-4b-lec"/>
-                                        </connections>
-                                    </barButtonItem>
-                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="5nf-1V-5Ee"/>
-                                    <barButtonItem title="Record" id="AWj-Lv-JVP"/>
-                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="rVO-Q3-fGJ"/>
-                                    <barButtonItem title="Setting" id="7Dc-Zj-dGr">
-                                        <connections>
-                                            <segue destination="NwQ-lb-udK" kind="show" identifier="SEGUE_SETTINGS_FROM_RECORDS" id="PjZ-1I-zrJ"/>
-                                        </connections>
-                                    </barButtonItem>
-                                </items>
-                            </toolbar>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xkn-wW-a2M">
-                                <rect key="frame" x="75" y="259" width="99" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xs9-9k-wLk">
+                                <rect key="frame" x="241" y="524" width="44" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Record"/>
-                                <connections>
-                                    <action selector="Action_Record:" destination="mfL-b4-7yL" eventType="touchUpInside" id="X9C-fs-b0t"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pTb-1L-rh4">
-                                <rect key="frame" x="199" y="259" width="104" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Flag"/>
-                                <connections>
-                                    <action selector="Action_Flag:" destination="mfL-b4-7yL" eventType="touchUpInside" id="4Tr-1b-R95"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xs9-9k-wLk">
-                                <rect key="frame" x="169" y="210" width="37" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Done"/>
+                                <state key="normal" image="Done_Icon"/>
                                 <connections>
                                     <action selector="Action_Done:" destination="mfL-b4-7yL" eventType="touchUpInside" id="l0i-dK-bO8"/>
                                 </connections>
                             </button>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xkE-UA-XYI">
+                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="barTintColor" red="0.85098039215686272" green="0.22745098039215686" blue="0.16470588235294117" alpha="1" colorSpace="calibratedRGB"/>
+                                <textAttributes key="titleTextAttributes">
+                                    <offsetWrapper key="textShadowOffset" horizontal="0.0" vertical="0.0"/>
+                                </textAttributes>
+                                <items>
+                                    <navigationItem id="Q59-5R-sAj">
+                                        <nil key="title"/>
+                                        <barButtonItem key="leftBarButtonItem" image="Schedule_Icon_White" id="E9A-u2-g5m">
+                                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                        </barButtonItem>
+                                        <button key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="XqQ-AH-6nE">
+                                            <rect key="frame" x="84" y="-0.5" width="207" height="45"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <state key="normal" image="Logo-White">
+                                                <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                            </state>
+                                        </button>
+                                        <barButtonItem key="rightBarButtonItem" image="soundWavesIcon" id="RYm-MD-ngr">
+                                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4Nq-J7-jOl">
+                                <rect key="frame" x="0.0" y="623" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <items>
+                                    <barButtonItem title="Setting" id="7Dc-Zj-dGr">
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                        <connections>
+                                            <segue destination="NwQ-lb-udK" kind="show" identifier="SEGUE_SETTINGS_FROM_RECORDS" id="PjZ-1I-zrJ"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="5nf-1V-5Ee"/>
+                                    <barButtonItem title="Record" id="AWj-Lv-JVP">
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="rVO-Q3-fGJ"/>
+                                    <barButtonItem image="File_Icon" id="6Pi-R6-3wy">
+                                        <inset key="imageInsets" minX="0.0" minY="-5" maxX="0.0" maxY="0.0"/>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                        <connections>
+                                            <segue destination="gpr-ZK-UmH" kind="show" identifier="SEGUE_FILES_FROM_RECORDS" id="8MS-4b-lec"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                                <color key="barTintColor" red="0.88627450980392153" green="0.2196078431372549" blue="0.19215686274509805" alpha="1" colorSpace="calibratedRGB"/>
+                            </toolbar>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WRV-ac-dpk">
+                                <rect key="frame" x="16" y="218" width="68" height="68"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="Pause_Toolbar"/>
+                                <connections>
+                                    <action selector="Action_PausePlayer:" destination="mfL-b4-7yL" eventType="touchUpInside" id="0vN-QG-51O"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PEn-C9-Bdw">
+                                <rect key="frame" x="16" y="218" width="68" height="68"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="Play_Button"/>
+                                <connections>
+                                    <action selector="Action_Play:" destination="mfL-b4-7yL" eventType="touchUpInside" id="ODu-95-7Jo"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="756" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xkn-wW-a2M">
+                                <rect key="frame" x="153" y="508" width="68" height="68"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="Mic_ToolBar"/>
+                                <connections>
+                                    <action selector="Action_Record:" destination="mfL-b4-7yL" eventType="touchUpInside" id="X9C-fs-b0t"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pTb-1L-rh4">
+                                <rect key="frame" x="153" y="318" width="68" height="66"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="TargetIcon_Red"/>
+                                <connections>
+                                    <action selector="Action_Flag:" destination="mfL-b4-7yL" eventType="touchUpInside" id="4Tr-1b-R95"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dpz-kN-z2t">
+                                <rect key="frame" x="90" y="524" width="44" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="Delete_Icon"/>
+                                <connections>
+                                    <action selector="Action_Delete:" destination="mfL-b4-7yL" eventType="touchUpInside" id="OCB-Kh-hnh"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4BX-KA-cYi">
+                                <rect key="frame" x="241" y="329" width="44" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="Trim_Icon_Red"/>
+                            </button>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Z4w-QV-Weg">
+                                <rect key="frame" x="16" y="82" width="343" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p2K-mQ-c9v">
-                                <rect key="frame" x="96" y="374" width="169" height="35"/>
+                                <rect key="frame" x="92" y="235" width="258" height="35"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WRV-ac-dpk">
-                                <rect key="frame" x="209" y="336" width="42" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aBu-RL-rMR">
+                                <rect key="frame" x="92" y="329" width="44" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Pause"/>
-                                <connections>
-                                    <action selector="Action_PausePlayer:" destination="mfL-b4-7yL" eventType="touchUpInside" id="0vN-QG-51O"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PEn-C9-Bdw">
-                                <rect key="frame" x="115" y="336" width="68" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Play"/>
-                                <connections>
-                                    <action selector="Action_Play:" destination="mfL-b4-7yL" eventType="touchUpInside" id="ODu-95-7Jo"/>
-                                </connections>
+                                <state key="normal" image="Timer_Icon_Red"/>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstAttribute="trailing" secondItem="4Nq-J7-jOl" secondAttribute="trailing" id="8Nk-yl-1aA"/>
-                            <constraint firstItem="4Nq-J7-jOl" firstAttribute="leading" secondItem="myS-zd-dh2" secondAttribute="leading" id="CI1-dY-BvV"/>
-                            <constraint firstItem="ueQ-QE-glY" firstAttribute="top" secondItem="4Nq-J7-jOl" secondAttribute="bottom" id="SL8-qa-8Kt"/>
-                        </constraints>
+                        <color key="backgroundColor" red="0.88627450980392153" green="0.83320147424523883" blue="0.69415310906775818" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <connections>
+                        <outlet property="Button_Delete" destination="dpz-kN-z2t" id="XZl-Ya-8Jj"/>
                         <outlet property="Button_Done" destination="xs9-9k-wLk" id="9EF-Ov-qzI"/>
                         <outlet property="Button_Flag" destination="pTb-1L-rh4" id="3qL-KG-SVX"/>
                         <outlet property="Button_PausePlayer" destination="WRV-ac-dpk" id="xZl-CG-gIj"/>
                         <outlet property="Button_Play" destination="PEn-C9-Bdw" id="1ti-fd-3rE"/>
                         <outlet property="Button_Record" destination="Xkn-wW-a2M" id="uhX-ZM-CFX"/>
                         <outlet property="Label_Time" destination="p2K-mQ-c9v" id="TdU-WJ-Xqs"/>
+                        <outlet property="Toolbar_Files" destination="6Pi-R6-3wy" id="Kaa-Fc-7hc"/>
+                        <outlet property="Toolbar_Record" destination="AWj-Lv-JVP" id="vF7-i3-NqQ"/>
+                        <outlet property="Toolbar_Settings" destination="7Dc-Zj-dGr" id="qKC-mk-4Tc"/>
+                        <outlet property="TopNavigationBar" destination="xkE-UA-XYI" id="P2n-Jt-Qeg"/>
                         <outlet property="view" destination="myS-zd-dh2" id="n9S-Jl-i0y"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BoW-Zn-Z8S" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1496.8" y="318.89055472263868"/>
+            <point key="canvasLocation" x="1493.5999999999999" y="316.19190404797604"/>
         </scene>
         <!--Files-->
         <scene sceneID="Fnd-SC-jKI">
@@ -222,10 +177,15 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cUP-CA-zuN">
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cUP-CA-zuN">
                                 <rect key="frame" x="0.0" y="623" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <items>
-                                    <barButtonItem title="Files" id="8hl-NO-cHL"/>
+                                    <barButtonItem title="Setting" id="yy1-am-Zha">
+                                        <connections>
+                                            <segue destination="NwQ-lb-udK" kind="show" identifier="SEGUE_SETTINGS_FROM_FILES" id="Nak-1N-2IG"/>
+                                        </connections>
+                                    </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="EY0-2R-mul"/>
                                     <barButtonItem title="Record" id="0QK-jE-pmZ">
                                         <connections>
@@ -233,28 +193,213 @@
                                         </connections>
                                     </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="VBX-xx-0DW"/>
-                                    <barButtonItem title="Setting" id="yy1-am-Zha">
+                                    <barButtonItem image="File_Icon" id="8hl-NO-cHL"/>
+                                </items>
+                                <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="barTintColor" red="0.90258413459999998" green="0.3305143056" blue="0.27126868910000002" alpha="1" colorSpace="calibratedRGB"/>
+                            </toolbar>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="X4Z-cs-R2i">
+                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="barTintColor" red="0.85098039219999999" green="0.2274509804" blue="0.1647058824" alpha="1" colorSpace="calibratedRGB"/>
+                                <textAttributes key="titleTextAttributes">
+                                    <offsetWrapper key="textShadowOffset" horizontal="0.0" vertical="0.0"/>
+                                </textAttributes>
+                                <items>
+                                    <navigationItem id="iRA-04-axi">
+                                        <nil key="title"/>
+                                        <barButtonItem key="leftBarButtonItem" title="Back" id="1v2-73-I35">
+                                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                            <connections>
+                                                <action selector="Action_Back:" destination="gpr-ZK-UmH" id="nNQ-EZ-iJv"/>
+                                            </connections>
+                                        </barButtonItem>
+                                        <rightBarButtonItems>
+                                            <barButtonItem image="soundWavesIcon" id="VzL-ha-RDT">
+                                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                                <connections>
+                                                    <segue destination="ewj-DH-bZX" kind="show" identifier="SEGUE_AUDIOPLAYER_FROM_FILES" id="3zu-Hx-wHY"/>
+                                                </connections>
+                                            </barButtonItem>
+                                            <barButtonItem title="Select" id="kRf-G7-ljP">
+                                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                            </barButtonItem>
+                                            <barButtonItem title="Done" id="sxk-qc-zgL">
+                                                <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                <connections>
+                                                    <action selector="Action_DoneChangingDirectory:" destination="gpr-ZK-UmH" id="zdf-be-kAq"/>
+                                                </connections>
+                                            </barButtonItem>
+                                        </rightBarButtonItems>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mhG-GK-4eM">
+                                <rect key="frame" x="0.0" y="64" width="375" height="559"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="rO6-54-knQ">
+                                        <rect key="frame" x="0.0" y="84" width="375" height="475"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <collectionViewLayout key="collectionViewLayout" id="9uk-yB-Vps" customClass="RAReorderableLayout" customModule="MyVoice" customModuleProvider="target"/>
+                                        <cells>
+                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="verticalCell" reuseIdentifier="verticalCell" id="TKm-cZ-cCg" userLabel="verticalCell" customClass="RACollectionViewCell" customModule="MyVoice" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                </view>
+                                            </collectionViewCell>
+                                        </cells>
+                                    </collectionView>
+                                    <searchBar contentMode="redraw" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mME-br-M96">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </searchBar>
+                                    <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="MjT-JZ-j7B">
+                                        <rect key="frame" x="16" y="48" width="255" height="29"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <segments>
+                                            <segment title="Name"/>
+                                            <segment title="Type"/>
+                                            <segment title="Date"/>
+                                        </segments>
+                                        <color key="tintColor" red="0.90258413459999998" green="0.3305143056" blue="0.27126868910000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    </segmentedControl>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pwu-Ch-Zvw">
+                                        <rect key="frame" x="298" y="48" width="46" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="Button"/>
+                                    </button>
+                                </subviews>
+                            </scrollView>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0gy-9i-cOn">
+                                <rect key="frame" x="0.0" y="623" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <items>
+                                    <barButtonItem title="+" id="NLc-Ec-RPH">
+                                        <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <connections>
-                                            <segue destination="NwQ-lb-udK" kind="show" identifier="SEGUE_SETTINGS_FROM_FILES" id="Nak-1N-2IG"/>
+                                            <action selector="Action_CreateNewFile:" destination="gpr-ZK-UmH" id="gYw-sU-PfR"/>
                                         </connections>
                                     </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="ggp-O4-4p4"/>
+                                    <barButtonItem title="Action" id="EQl-sT-7ck">
+                                        <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <connections>
+                                            <action selector="Action_Action:" destination="gpr-ZK-UmH" id="vii-sc-Ofh"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="75u-AZ-VQA"/>
+                                    <barButtonItem image="Delete_Icon" id="N3Q-zl-H3J">
+                                        <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    </barButtonItem>
                                 </items>
+                                <color key="barTintColor" red="0.90258413459999998" green="0.3305143056" blue="0.27126868910000002" alpha="1" colorSpace="calibratedRGB"/>
                             </toolbar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstAttribute="trailing" secondItem="cUP-CA-zuN" secondAttribute="trailing" id="fPY-8K-lx6"/>
-                            <constraint firstItem="cUP-CA-zuN" firstAttribute="leading" secondItem="DZA-kN-fuQ" secondAttribute="leading" id="oWr-sJ-Taz"/>
-                            <constraint firstItem="lbJ-co-ri4" firstAttribute="top" secondItem="cUP-CA-zuN" secondAttribute="bottom" id="rZC-iO-sRy"/>
-                        </constraints>
                     </view>
                     <connections>
-                        <outlet property="view" destination="DZA-kN-fuQ" id="2eh-0W-XvJ"/>
+                        <outlet property="Button_Action" destination="EQl-sT-7ck" id="xjc-jU-IJz"/>
+                        <outlet property="Button_Back" destination="1v2-73-I35" id="qbB-uN-7Ae"/>
+                        <outlet property="Button_CreateNewFile" destination="NLc-Ec-RPH" id="FU2-9y-75N"/>
+                        <outlet property="Button_DoneChangingDirectory" destination="sxk-qc-zgL" id="hJt-dj-u7y"/>
+                        <outlet property="collectionView" destination="rO6-54-knQ" id="GAG-7b-ELr"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1JX-e9-jNi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2486" y="-17"/>
+            <point key="canvasLocation" x="2309.5999999999999" y="315.29235382308849"/>
+        </scene>
+        <!--Audio Player-->
+        <scene sceneID="m3z-g7-rzC">
+            <objects>
+                <viewController id="ewj-DH-bZX" customClass="VC_AudioPlayer" customModule="MyVoice" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Nha-09-lyr"/>
+                        <viewControllerLayoutGuide type="bottom" id="VVm-UP-Wsn"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="bcd-aE-Ukc">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="e8T-of-Td0">
+                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <items>
+                                    <navigationItem title="Title" id="HaQ-iF-q3k"/>
+                                </items>
+                            </navigationBar>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mqr-2M-s16">
+                                <rect key="frame" x="172" y="218" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Play"/>
+                                <connections>
+                                    <action selector="Action_Play:" destination="ewj-DH-bZX" eventType="touchUpInside" id="m7F-yn-QRI"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Qh-kt-CCJ">
+                                <rect key="frame" x="162" y="370" width="50" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Restart"/>
+                                <connections>
+                                    <action selector="Action_Restart:" destination="ewj-DH-bZX" eventType="touchUpInside" id="SDc-yl-flA"/>
+                                </connections>
+                            </button>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="h69-yc-EsE">
+                                <rect key="frame" x="0.0" y="623" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <items>
+                                    <barButtonItem title="Files" id="3g4-hu-QDe">
+                                        <connections>
+                                            <segue destination="gpr-ZK-UmH" kind="show" identifier="SEGUE_FILES_FROM_AUDIOPLAYER" id="KSL-a3-kRm"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="OMa-A3-d1P"/>
+                                    <barButtonItem title="Record" id="UJI-so-qlN"/>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="10W-U7-2wi"/>
+                                    <barButtonItem title="Settings" id="mVf-Eg-1Mk"/>
+                                </items>
+                            </toolbar>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cQg-O4-Nux">
+                                <rect key="frame" x="166" y="287" width="42" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Pause"/>
+                                <connections>
+                                    <action selector="Action_Pause:" destination="ewj-DH-bZX" eventType="touchUpInside" id="88k-vV-kXG"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Timer" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CWF-Nw-qkM">
+                                <rect key="frame" x="81" y="518" width="223" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="wRy-Hf-fmF">
+                                <rect key="frame" x="59" y="444" width="266" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="Action_ChangeAudioTime:" destination="ewj-DH-bZX" eventType="valueChanged" id="oNo-Q0-Mvf"/>
+                                </connections>
+                            </slider>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="Button_Pause" destination="cQg-O4-Nux" id="cXv-2t-Sl5"/>
+                        <outlet property="Button_Play" destination="mqr-2M-s16" id="Nzc-2x-IZc"/>
+                        <outlet property="Button_Restart" destination="3Qh-kt-CCJ" id="fZA-uu-hCR"/>
+                        <outlet property="Slider_Time" destination="wRy-Hf-fmF" id="lLA-0v-4GE"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="G7h-jb-GpV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3719.1999999999998" y="-24.7376311844078"/>
         </scene>
         <!--Settings-->
         <scene sceneID="H4T-Ps-T2K">
@@ -286,6 +431,21 @@
                                     <barButtonItem title="Setting" id="tUe-9u-9vo"/>
                                 </items>
                             </toolbar>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zVQ-Pf-7rF">
+                                <rect key="frame" x="148" y="243" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="Action_PickerView:" destination="NwQ-lb-udK" eventType="touchUpInside" id="HVL-Z9-8co"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HGv-rP-Pua">
+                                <rect key="frame" x="123" y="152" width="97" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -294,15 +454,33 @@
                             <constraint firstItem="LAR-v6-kvB" firstAttribute="top" secondItem="fxM-cg-mXZ" secondAttribute="bottom" id="m1i-aX-B17"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="PickerView" destination="zVQ-Pf-7rF" id="bPI-sA-NvM"/>
+                        <outlet property="textField" destination="HGv-rP-Pua" id="hSa-tb-PWr"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Jj2-3h-cmR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2486" y="1093"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Delete_Icon" width="14" height="18"/>
+        <image name="Done_Icon" width="18" height="14"/>
+        <image name="File_Icon" width="38" height="41"/>
+        <image name="Logo-White" width="36" height="56"/>
+        <image name="Mic_ToolBar" width="68" height="68"/>
+        <image name="Pause_Toolbar" width="68" height="68"/>
+        <image name="Play_Button" width="68" height="68"/>
+        <image name="Schedule_Icon_White" width="40" height="40"/>
+        <image name="TargetIcon_Red" width="60" height="60"/>
+        <image name="Timer_Icon_Red" width="56" height="56"/>
+        <image name="Trim_Icon_Red" width="56" height="56"/>
+        <image name="soundWavesIcon" width="46" height="26"/>
+    </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Hhn-8W-TeN"/>
+        <segue reference="30L-1V-El0"/>
+        <segue reference="8MS-4b-lec"/>
         <segue reference="Nak-1N-2IG"/>
-        <segue reference="xwn-z4-rgR"/>
     </inferredMetricsTieBreakers>
 </document>

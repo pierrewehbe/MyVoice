@@ -17,9 +17,58 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        
+       // print("Documents Directory of app :" + appDocumentDirectory.path)
+        //listContentsAtDirectory(Directory: "/")
+       // print("\n")
+       // print("Temporary Directory of app :" + appTemporaryFilesDirectory)
+       // listContentsAtDirectory(Directory: "/")
+       // print("\n")
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(AppDelegate.rotated), name: NSNotification.Name.UIDeviceOrientationDidChange, object: nil)
+        
+        UserDefaults.standard.setValue(false, forKey: "_UIConstraintBasedLayoutLogUnsatisfiable")
+        directoryToSave = "Files/" // So each time we open the application, the default directory is Files/
+        myUserDefaults.synchronize()
+        
+//        var protectedDataAvailable = UIApplication.shared.isProtectedDataAvailable
+//        if protectedDataAvailable == true {
+//            self.launchApp()
+//        }
+//        else {
+//            print("protected_Data_NOT_Available")
+//            NotificationCenter.default.addObserver(self, selector: #selector(self.protectedDataAvailableNotification), name: UIApplicationProtectedDataDidBecomeAvailable, object: nil)
+//        }
+  
         return true
     }
 
+    
+//    func protectedDataAvailableNotification(_ notification: Notification) {
+//        print("protectedDataAvailableNotification")
+//        NotificationCenter.default.removeObserver(self, name: UIApplicationProtectedDataDidBecomeAvailable, object: nil)
+//        self.launchApp()
+//    }
+    
+    
+    func rotated()
+    {
+        if(UIDeviceOrientationIsLandscape(UIDevice.current.orientation))
+        {
+            print("Landscape")
+            //FIXME: Cancel
+        }
+        
+        if(UIDeviceOrientationIsPortrait(UIDevice.current.orientation))
+        {
+            print("Portrait")
+        }
+        
+    }
+    
+    
+    
     func applicationWillResignActive(_ application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
         // Use this method to pause ongoing tasks, disable timers, and throttle down OpenGL ES frame rates. Games should use this method to pause the game.
@@ -59,11 +108,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
             let vc = mainStoryboard.instantiateViewController(withIdentifier: "1") as! VC_Recorder
             vc.updateRecordButtonAtExit()
-            defaults.set(true, forKey: "wasRecording")
+            myUserDefaults.set(true, forKey: "wasRecording")
             
         }else{
-             defaults.set(false, forKey: "wasRecording")
+             myUserDefaults.set(false, forKey: "wasRecording")
         }
+        
+        myUserDefaults.synchronize()
         self.saveContext()
     }
 

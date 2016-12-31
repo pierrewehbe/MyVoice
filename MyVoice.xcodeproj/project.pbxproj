@@ -10,10 +10,17 @@
 		8F1FFB191DD8672400DAE7F2 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F1FFB181DD8672400DAE7F2 /* AVFoundation.framework */; };
 		8F50C98F1DDB3C4A00FB7B5F /* VC_Recorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F50C98E1DDB3C4A00FB7B5F /* VC_Recorder.swift */; };
 		8F50C9921DDB40AC00FB7B5F /* RecordBtnState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F50C9911DDB40AC00FB7B5F /* RecordBtnState.swift */; };
+		8F98AB431DE0954B00137A38 /* Garbage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F98AB421DE0954B00137A38 /* Garbage.swift */; };
 		8FAB811A1DDCAAE100A1CA54 /* VC_Files.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FAB81191DDCAAE100A1CA54 /* VC_Files.swift */; };
 		8FAB811C1DDCB0D700A1CA54 /* VC_Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FAB811B1DDCB0D700A1CA54 /* VC_Settings.swift */; };
+		8FAB811F1DDDB93700A1CA54 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8FAB811E1DDDB93700A1CA54 /* AudioToolbox.framework */; };
+		8FACFB8F1DDF01130026F3DD /* DirectoriesManagment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FACFB8E1DDF01130026F3DD /* DirectoriesManagment.swift */; };
+		8FD8A9221E0DADF900ECB41D /* RAReorderableLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FD8A9211E0DADF900ECB41D /* RAReorderableLayout.swift */; };
+		8FD8A9241E0DC48F00ECB41D /* FolderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FD8A9231E0DC48F00ECB41D /* FolderCell.swift */; };
+		8FD8DF2C1E13F61800BEE7BA /* StringStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FD8DF2B1E13F61800BEE7BA /* StringStack.swift */; };
+		8FD8DF2E1E13F63800BEE7BA /* AudioObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FD8DF2D1E13F63800BEE7BA /* AudioObject.swift */; };
 		8FEBE4731DD7A790002A2D7A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FEBE4721DD7A790002A2D7A /* AppDelegate.swift */; };
-		8FEBE4751DD7A790002A2D7A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FEBE4741DD7A790002A2D7A /* ViewController.swift */; };
+		8FEBE4751DD7A790002A2D7A /* VC_AudioPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FEBE4741DD7A790002A2D7A /* VC_AudioPlayer.swift */; };
 		8FEBE4781DD7A790002A2D7A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8FEBE4761DD7A790002A2D7A /* Main.storyboard */; };
 		8FEBE47B1DD7A790002A2D7A /* MyVoice.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8FEBE4791DD7A790002A2D7A /* MyVoice.xcdatamodeld */; };
 		8FEBE47D1DD7A790002A2D7A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8FEBE47C1DD7A790002A2D7A /* Assets.xcassets */; };
@@ -45,11 +52,19 @@
 		8F1FFB181DD8672400DAE7F2 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		8F50C98E1DDB3C4A00FB7B5F /* VC_Recorder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VC_Recorder.swift; sourceTree = "<group>"; };
 		8F50C9911DDB40AC00FB7B5F /* RecordBtnState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordBtnState.swift; sourceTree = "<group>"; };
+		8F98AB421DE0954B00137A38 /* Garbage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Garbage.swift; sourceTree = "<group>"; };
 		8FAB81191DDCAAE100A1CA54 /* VC_Files.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VC_Files.swift; sourceTree = "<group>"; };
 		8FAB811B1DDCB0D700A1CA54 /* VC_Settings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VC_Settings.swift; sourceTree = "<group>"; };
+		8FAB811D1DDDB93600A1CA54 /* MyVoice.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MyVoice.entitlements; sourceTree = "<group>"; };
+		8FAB811E1DDDB93700A1CA54 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		8FACFB8E1DDF01130026F3DD /* DirectoriesManagment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DirectoriesManagment.swift; sourceTree = "<group>"; };
+		8FD8A9211E0DADF900ECB41D /* RAReorderableLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RAReorderableLayout.swift; sourceTree = "<group>"; };
+		8FD8A9231E0DC48F00ECB41D /* FolderCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FolderCell.swift; sourceTree = "<group>"; };
+		8FD8DF2B1E13F61800BEE7BA /* StringStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringStack.swift; sourceTree = "<group>"; };
+		8FD8DF2D1E13F63800BEE7BA /* AudioObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioObject.swift; sourceTree = "<group>"; };
 		8FEBE46F1DD7A790002A2D7A /* MyVoice.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyVoice.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8FEBE4721DD7A790002A2D7A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		8FEBE4741DD7A790002A2D7A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		8FEBE4741DD7A790002A2D7A /* VC_AudioPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VC_AudioPlayer.swift; sourceTree = "<group>"; };
 		8FEBE4771DD7A790002A2D7A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		8FEBE47A1DD7A790002A2D7A /* MyVoice.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MyVoice.xcdatamodel; sourceTree = "<group>"; };
 		8FEBE47C1DD7A790002A2D7A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -71,6 +86,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8F1FFB191DD8672400DAE7F2 /* AVFoundation.framework in Frameworks */,
+				8FAB811F1DDDB93700A1CA54 /* AudioToolbox.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -94,6 +110,7 @@
 		8F1FFB171DD8672400DAE7F2 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				8FAB811E1DDDB93700A1CA54 /* AudioToolbox.framework */,
 				8F1FFB181DD8672400DAE7F2 /* AVFoundation.framework */,
 			);
 			name = Frameworks;
@@ -103,6 +120,9 @@
 			isa = PBXGroup;
 			children = (
 				8F50C9911DDB40AC00FB7B5F /* RecordBtnState.swift */,
+				8FACFB8E1DDF01130026F3DD /* DirectoriesManagment.swift */,
+				8FD8DF2B1E13F61800BEE7BA /* StringStack.swift */,
+				8FD8DF2D1E13F63800BEE7BA /* AudioObject.swift */,
 			);
 			name = Types;
 			sourceTree = "<group>";
@@ -110,6 +130,7 @@
 		8FAB81161DDB71C900A1CA54 /* Garbage */ = {
 			isa = PBXGroup;
 			children = (
+				8F98AB421DE0954B00137A38 /* Garbage.swift */,
 			);
 			name = Garbage;
 			sourceTree = "<group>";
@@ -138,13 +159,13 @@
 		8FEBE4711DD7A790002A2D7A /* MyVoice */ = {
 			isa = PBXGroup;
 			children = (
+				8FAB811D1DDDB93600A1CA54 /* MyVoice.entitlements */,
 				8FEBE4B01DD7AA15002A2D7A /* Model */,
 				8FEBE4AF1DD7AA0E002A2D7A /* View */,
 				8FEBE4AE1DD7AA03002A2D7A /* Controller */,
 				8FEBE4AA1DD7A9A5002A2D7A /* Ressources */,
 				8FEBE4A31DD7A978002A2D7A /* Utilities */,
 				8FEBE4721DD7A790002A2D7A /* AppDelegate.swift */,
-				8FEBE4741DD7A790002A2D7A /* ViewController.swift */,
 				8FEBE4761DD7A790002A2D7A /* Main.storyboard */,
 				8FEBE47C1DD7A790002A2D7A /* Assets.xcassets */,
 				8FEBE47E1DD7A790002A2D7A /* LaunchScreen.storyboard */,
@@ -220,6 +241,7 @@
 				8F50C98E1DDB3C4A00FB7B5F /* VC_Recorder.swift */,
 				8FAB81191DDCAAE100A1CA54 /* VC_Files.swift */,
 				8FAB811B1DDCB0D700A1CA54 /* VC_Settings.swift */,
+				8FEBE4741DD7A790002A2D7A /* VC_AudioPlayer.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -234,6 +256,8 @@
 		8FEBE4B01DD7AA15002A2D7A /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				8FD8A9211E0DADF900ECB41D /* RAReorderableLayout.swift */,
+				8FD8A9231E0DC48F00ECB41D /* FolderCell.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -309,6 +333,11 @@
 						DevelopmentTeam = 3G68H7X4AR;
 						LastSwiftMigration = 0810;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.InterAppAudio = {
+								enabled = 1;
+							};
+						};
 					};
 					8FEBE4851DD7A791002A2D7A = {
 						CreatedOnToolsVersion = 7.3;
@@ -376,12 +405,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8FACFB8F1DDF01130026F3DD /* DirectoriesManagment.swift in Sources */,
 				8FEBE4A81DD7A997002A2D7A /* Extensions.swift in Sources */,
+				8F98AB431DE0954B00137A38 /* Garbage.swift in Sources */,
 				8FEBE47B1DD7A790002A2D7A /* MyVoice.xcdatamodeld in Sources */,
+				8FD8DF2C1E13F61800BEE7BA /* StringStack.swift in Sources */,
 				8F50C98F1DDB3C4A00FB7B5F /* VC_Recorder.swift in Sources */,
-				8FEBE4751DD7A790002A2D7A /* ViewController.swift in Sources */,
+				8FEBE4751DD7A790002A2D7A /* VC_AudioPlayer.swift in Sources */,
 				8FAB811A1DDCAAE100A1CA54 /* VC_Files.swift in Sources */,
+				8FD8A9241E0DC48F00ECB41D /* FolderCell.swift in Sources */,
 				8FEBE4731DD7A790002A2D7A /* AppDelegate.swift in Sources */,
+				8FD8A9221E0DADF900ECB41D /* RAReorderableLayout.swift in Sources */,
+				8FD8DF2E1E13F63800BEE7BA /* AudioObject.swift in Sources */,
 				8FEBE4A61DD7A98D002A2D7A /* Constants.swift in Sources */,
 				8FAB811C1DDCB0D700A1CA54 /* VC_Settings.swift in Sources */,
 				8F50C9921DDB40AC00FB7B5F /* RecordBtnState.swift in Sources */,
@@ -526,6 +561,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = MyVoice/MyVoice.entitlements;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = 3G68H7X4AR;
 				INFOPLIST_FILE = MyVoice/Info.plist;
@@ -541,6 +577,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = MyVoice/MyVoice.entitlements;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = 3G68H7X4AR;
 				INFOPLIST_FILE = MyVoice/Info.plist;

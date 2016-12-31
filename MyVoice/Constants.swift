@@ -14,9 +14,15 @@ import UIKit
 
 
 //MARK: File Manager
-let fileMgr = FileManager.default
-let defaults = UserDefaults.standard
+let myFileManager = FileManager.default
+let dirPaths = myFileManager.urls(for: .documentDirectory, in: .userDomainMask)
+let appDocumentDirectory  = dirPaths[0]
 
+let appTemporaryFilesDirectory = NSTemporaryDirectory()
+let screenSize: CGRect = UIScreen.main.bounds
+
+//MARK: User Defaults
+let myUserDefaults = UserDefaults.standard
 
 //MARK: CoreData
 
@@ -37,9 +43,12 @@ let Message_Delete_Success: String = "Deletion has been sucessful"
 
 //MARK: Variables
 let defaultTime = "00:00"
-
+let CREATENEWDIRECTORY = "Create new Directory"
 
 //MARK: Segues
+
+var changingDirectory = false
+var currentlySaving = false
 
 let RtoF : String = "SEGUE_FILES_FROM_RECORDS"
 let RtoS : String = "SEGUE_SETTINGS_FROM_RECORDS"
@@ -49,3 +58,7 @@ let FtoS : String = "SEGUE_SETTINGS_FROM_FILES"
 
 let StoR : String = "SEGUE_RECORDS_FROM_SETTINGS"
 let StoF : String = "SEGUE_FILES_FROM_SETTINGS"
+
+let FtoAP : String = "SEGUE_AUDIOPLAYER_FROM_FILES"
+let APtoF : String = "SEGUE_FILES_FROM_AUDIOPLAYER"
+
